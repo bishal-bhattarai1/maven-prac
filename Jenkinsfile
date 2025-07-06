@@ -1,24 +1,28 @@
-pipeline{
-    stages("BUILD"){
-        steps{
-            echo "Is for build"
+pipeline {
+    stages{
+        stage("BUILD"){
+            steps{
+                echo "Is for build"
+            }
         }
-    stages("TEST"){
-        steps{
-            echo "Is for test"
+        stage("TEST"){
+            steps{
+                echo "Is for test"
+            }
+        } 
+        stage("Deploy-env"){
+            steps{
+                echo "Deploy for env"
+            }
         }
-    } 
-    stages("Deploy-env"){
-        steps{
-            echo "Deploy for env"
+        
+        stage("deploy-for-pro"){
+            steps{
+                echo "Deploy for production"
+            }
+                
         }
-    
-    stages("deploy-for-pro"){
-        steps{
-            echo "Deploy for production"
-        }
-            
-     }
 
+        
     }
 }
